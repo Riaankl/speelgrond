@@ -1,0 +1,16 @@
+#+TITLE: NCW Work Repo
+
+
+This contains org files and other resources to help us manage the workload for creating a set of workshops for the Kubecon New Contributor Summit NCW.
+
+This workoad is related to this umbrella ticket:
+
+https://github.com/kubernetes/community/issues/4549
+
+We signed up for All the Local Build and Test Modules, whose work is outlined here:
+[[https://github.com/kubernetes/community/issues/4948][Local Build and Test 1 Ticket]]
+[[https://github.com/kubernetes/community/issues/4949][LBT2 Ticket]]
+[[https://github.com/kubernetes/community/issues/4950][LBT3 ticket]]
+[[https://github.com/kubernetes/community/issues/4951][LBT4 ticket]]
+
+There is still a decent amount of unknown around timeline and expectations.  We are tracking our notes around this, and the work related to these tickets in [[./index.org][index.org]]
