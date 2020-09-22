@@ -1,0 +1,61 @@
+#+TITLE: Index
+
+* What this is
+Each Kubecon has a New Contributor Workshop(NCW), a set of workshops intended for people with little to no open source and kubernetes experience.
+
+The NCW is moving to be remote and pre-recorded, and so needs updated slides, exercises, and videos to work well remote and asynchronously.
+
+ii volunteered to create 4 of these segments, around local building and testing, whose combined length is around 2h40m of content.
+
+This document helps us coordinate the completion of this, or any updates that change our required work.
+* Timelines
+- ???
+- [[https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/][Kubecon NA, 17/11]]
+* Our Expectations
+- [[https://kubernetes.slack.com/archives/CQ6BVCAH0/p1600804463002900?thread_ts=1599610792.001400&cid=CQ6BVCAH0][???]]
+- For Each segement we volunteered for:
+    - Update Slides so all links work and info up-to-date
+    - Create exercises that can be done and checked remotely
+    - Script Video to go over this section that fits desired length
+    - Record Video
+    - Be present for help during ncw(?)
+* Open Tickets
+** Local Build and Test 1
+**Length: 30 minutes**
+[[https://github.com/kubernetes/community/issues/4948][Ticket]]
+That link has a good set of requirements that I won't retype here.  In brief, it's making sure they have everything installed and running to be able to move through the k8s codebase and run go code.
+
+The ticket says this is related to slides 64 and 65. Given the larger set of requirements, my assumption is we'd be adding new slides to fill out all the info.
+
+*** TODO Slide 65 is a set of images the workshopee is supposed to bring down to their computer using docker pull.  The links do not seem to be valid anymore.  Do we have new links?  Are we still using goharbor.io for this?
+** Local Build and Test 2
+**Length: 40 minutes**
+[[https://github.com/kubernetes/community/issues/4949][ticket]]
+
+This next level brings in a bit of coding around the make command.  The basic idea would be to understand make, the k8s cmd repo, and kubectl and kind.  A good end goal for the workshop would be to be able to run kubectl commands on your own kind cluster and have the text output of the command be somethiong you've coded.
+
+We should use content from [[https://github.com/kubernetes/community/issues/4951][these slides]] , but I am uncertain if we are intended to update these, or to use them as inspiration for new slides held somewhere else.
+
+*** TODO Run through the ideas of the workshop, to ensure I understand it.
+*** TODO Figure out where any slides should live in the slide deck
+
+** Local Build and Test 3
+**Length: 30 Minutes**
+[[https://github.com/kubernetes/community/issues/4950][ticket]]
+The focus of this is on unit tests, and assumes the student has gone through LBT1and2 but also has previous kubernetes and open source experience.
+
+Basic Story: If you were to make a pr to kubernetes with some change in code, like updating the kubectl binary, how do you make sure this will runa nd that the PR will be easy to review and merge by the community?  You can do this with unit tests and `make verify`
+
+This is a 201 class and coordinating tutors is part of the workshop.  How would we want to handle this?  Is this something ii does (do we have the confidence to do it?) or something we should coordinate among sig-testing?
+*** TODO work through this ourselves to ensure we understand it.
+*** TODO have a strategy/reasonable expectation for the tutors
+** Local Build and Test 4
+**Length: 60 Minutes**
+[[https://github.com/kubernetes/community/issues/4951][ticket]]
+
+It's suggested to rename this Advanced Testing Topics and make it an optional class for curious folk.  In other words, it's deemed a nice to have.
+
+The content is the closest to what we do day-to-day, going over e2e tests and conformance.  However, do we want to save any planning work on this until we have a better idea of our ability on the required first three?
+* References
+- [[https://github.com/kubernetes/community/issues/4549][NCW Umbrella Issue]]
+- [[https://github.com/kubernetes/community/issues/4893][Video Recording Guide]]
