@@ -1,0 +1,61 @@
+#+TITLE: 2019 101 Notes
+
+* Context
+These are notes taken while moving through the video https://www.youtube.com/watch?v=g3AqkzEQ8OQ
+* TODO architecture diagram
+* CMD
+- setup so there is insertable/reusable code throughout codebase
+So something like cmd/kubectl isn't the actual code for kubectl, but just essentially a wrapper that calls kubectl.
+- If if you wanna make changes to kubectl, the actual code will be in either packaging or staging.
+- things that are going to be reused or imported somewhere will be in staging, for the most part.  it's the core stuff that gets published for reuse.
+* the k8s api
+- most of the non-deprecated api is actually in ~staging/src/k8s.io~
+* TODO  How do i run the thing i built?
+this may be outside of scope of our talk, most likely
+this may be outside of scope of our talk, most likely
+- You gotta have a cluster to run it on
+- in k/k you will see dir called ~cluster~
+- ~cluster~ is mostly deprecated and by this time is likely fully replaced by cluster-api.  What's the status of this, and if we include a walk through the code repo should we be talking about the cluster-api?
+
+* Dev requirements
+** ~6gb ram dedicated to the thing you'll be building
+this /thing/ is most often a virtual machine
+** 6 cores of cpu on laptop, 10 cores on linux vm
+** tens of gigabytes of disk.
+** TODO if you are doing this on yr laptop, how to check yr stats?
+*** mac
+*** window
+*** linux
+* Running a build
+- still will be simplest on linux
+- works okay for mac
+- windows in 2019 was experimental still
+- **if you are running the build on docker on mac, you will need to devote at least 6gb ram to this**
+  - this is not the default and so ensure you have it set up right.
+** where to put the code
+k8s is particular on a few fronts for this.
+the canonical place for kubernetes is $GOPATH/src/k8s.io/kubernetes
+**
+* TODO golang
+you want specific /1.12/, what's the current required v now?
+
+
+
+* fork and clone
+- make a fork, and clone it ot the canonical place, $GOPATH/src/k8s.io/kubernetes
+- set an upstream repo that is the official k8s repo
+* adding labels and issue/pr journey
+nice point about how the labels help show the path of decisions for how an issue is triaged and handled.
+this is all prow stuff, and good to watch it again better understanding how all of prow works
+* The final exercise
+they open up a playground with the intent to show how to make a couple pr's.
+sig.k8s.io/contributors/playground
+has a barcelona subrepo
+the intent is to have some pr's, find an owner, and try to get these pr's merged into this subdir.
+this will likely have some working version for the next kubecon, and we can find out what it'd be at the next contribex meeting.
+* Final thoughts
+this is a simple enough workshop that really doesn't require a lot of k8s or code knowledge to run, just an understanding of how the github stuff is structured.  Watching the Barcelona version, the workshop has the benefit of tpepper running it and hearing his asides and stories knowing that there's lived experience in it.  For a video recording, it's going to be less loose/anecdotal, closer to a helpful tutorial.
+
+Our Ticket said it's just for slides 64 and 65, but that doesn't seem to match the overall description of the owrkshop.  I assume it's more slides 64 to 80 or so.  It will be good to get clarity on this at the next NCW contributor meeting...e.g. if there's going to be multiple people working on multiple slides that add up to 30 minutes...and we are doing 64 and 65....or if that was a mistype in the original ticket and we are really taking the workshop 101 and making it into a video (and so including stuff about issue etiquette and labels and all that).
+
+Either way, I think this is manageable and largely the same as 2019, with some updates around the go and k8s versions to use, and the link to our goharbor builds.
